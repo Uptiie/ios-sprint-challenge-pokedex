@@ -57,18 +57,14 @@
             </objects>
             <point key="canvasLocation" x="1090" y="400"/>
         </scene>
-        <!--View Controller-->
+        <!--Search View Controller-->
         <scene sceneID="dA2-73-zkH">
             <objects>
-                <viewController id="Za0-JF-giy" sceneMemberID="viewController">
+                <viewController id="Za0-JF-giy" customClass="SearchViewController" customModule="pokemon_sprint" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="20A-Jc-nbO">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Vdp-HN-eHQ">
-                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
                             <searchBar contentMode="redraw" placeholder="Search for pokemon" translatesAutoresizingMaskIntoConstraints="NO" id="SwC-3a-MlQ">
                                 <rect key="frame" x="0.0" y="140" width="414" height="44"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -76,6 +72,9 @@
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ps8-Xm-oKr">
                                 <rect key="frame" x="149" y="782" width="108" height="30"/>
                                 <state key="normal" title="Save Pokemon"/>
+                                <connections>
+                                    <action selector="saveButton:" destination="Za0-JF-giy" eventType="touchUpInside" id="avI-av-3wz"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="66" translatesAutoresizingMaskIntoConstraints="NO" id="i4c-xe-ZlH">
                                 <rect key="frame" x="86.5" y="301" width="241" height="384.5"/>
@@ -166,21 +165,25 @@
                         <constraints>
                             <constraint firstItem="1XE-I3-bk8" firstAttribute="centerX" secondItem="SwC-3a-MlQ" secondAttribute="centerX" id="2Y5-ov-sZ1"/>
                             <constraint firstItem="1XE-I3-bk8" firstAttribute="centerX" secondItem="20A-Jc-nbO" secondAttribute="centerX" id="2rv-ZW-I6r"/>
-                            <constraint firstItem="1XE-I3-bk8" firstAttribute="centerX" secondItem="Vdp-HN-eHQ" secondAttribute="centerX" id="3jP-gK-Roo"/>
                             <constraint firstItem="ps8-Xm-oKr" firstAttribute="top" secondItem="i4c-xe-ZlH" secondAttribute="bottom" constant="42" id="3z4-iS-6wo"/>
                             <constraint firstItem="SwC-3a-MlQ" firstAttribute="top" secondItem="Pn5-7q-dGu" secondAttribute="top" id="Oz6-xq-RTr"/>
                             <constraint firstItem="1XE-I3-bk8" firstAttribute="top" secondItem="SwC-3a-MlQ" secondAttribute="bottom" constant="27" id="XhO-a3-OaY"/>
-                            <constraint firstItem="SwC-3a-MlQ" firstAttribute="top" secondItem="Vdp-HN-eHQ" secondAttribute="bottom" constant="52" id="dtc-6d-GyJ"/>
                             <constraint firstItem="ps8-Xm-oKr" firstAttribute="leading" secondItem="Pn5-7q-dGu" secondAttribute="leading" constant="157" id="hmb-bg-vgy"/>
                             <constraint firstItem="SwC-3a-MlQ" firstAttribute="leading" secondItem="20A-Jc-nbO" secondAttribute="leading" id="iPT-aU-r9e"/>
                             <constraint firstItem="1XE-I3-bk8" firstAttribute="top" secondItem="20A-Jc-nbO" secondAttribute="top" constant="211" id="kcQ-5s-hPn"/>
                             <constraint firstItem="i4c-xe-ZlH" firstAttribute="top" secondItem="1XE-I3-bk8" secondAttribute="bottom" constant="50" id="soh-7Z-Lj9"/>
-                            <constraint firstItem="Vdp-HN-eHQ" firstAttribute="top" secondItem="20A-Jc-nbO" secondAttribute="topMargin" constant="-96" id="uX2-wV-anY"/>
                             <constraint firstItem="1XE-I3-bk8" firstAttribute="centerX" secondItem="i4c-xe-ZlH" secondAttribute="centerX" id="xcK-24-Tvd"/>
-                            <constraint firstItem="SwC-3a-MlQ" firstAttribute="leading" secondItem="Vdp-HN-eHQ" secondAttribute="leading" id="zSq-4o-wGx"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Pn5-7q-dGu"/>
                     </view>
+                    <connections>
+                        <outlet property="abilitiesLabel" destination="veg-Jh-HdB" id="fbR-ST-VQ5"/>
+                        <outlet property="idLabel" destination="khZ-u4-egQ" id="Yl5-hc-ew8"/>
+                        <outlet property="imageView" destination="bQq-Am-2Ek" id="aUu-qc-ZY1"/>
+                        <outlet property="pokemonNameLabel" destination="1XE-I3-bk8" id="Hfg-h0-U4p"/>
+                        <outlet property="pokemonSearch" destination="SwC-3a-MlQ" id="mOC-3Y-9UE"/>
+                        <outlet property="typeLabel" destination="MSl-8C-Jvg" id="72w-xw-Fhu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vC3-eI-iQE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6349D6B22323061200F4A662 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6349D6B12323061200F4A662 /* SearchViewController.swift */; };
 		6357C3A222BD2CBD0026BD29 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6357C3A122BD2CBD0026BD29 /* AppDelegate.swift */; };
 		6357C3A722BD2CBD0026BD29 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6357C3A522BD2CBD0026BD29 /* Main.storyboard */; };
 		6357C3A922BD2CBE0026BD29 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6357C3A822BD2CBE0026BD29 /* Assets.xcassets */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6349D6B12323061200F4A662 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		6357C39E22BD2CBD0026BD29 /* pokemon sprint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "pokemon sprint.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6357C3A122BD2CBD0026BD29 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6357C3A622BD2CBD0026BD29 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 			children = (
 				6357C3B822BD3B010026BD29 /* PokemonTableViewController.swift */,
 				6357C3B622BD3AC50026BD29 /* PokemonDetailViewController.swift */,
+				6349D6B12323061200F4A662 /* SearchViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -160,6 +163,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6349D6B22323061200F4A662 /* SearchViewController.swift in Sources */,
 				6357C3A222BD2CBD0026BD29 /* AppDelegate.swift in Sources */,
 				6357C3B422BD32F70026BD29 /* Pokemon.swift in Sources */,
 				6357C3B922BD3B010026BD29 /* PokemonTableViewController.swift in Sources */,
