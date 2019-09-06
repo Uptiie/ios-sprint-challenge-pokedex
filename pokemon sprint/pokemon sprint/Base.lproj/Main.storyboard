@@ -292,6 +292,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Gua-bc-tOb"/>
                     </view>
+                    <connections>
+                        <outlet property="abilitiesLabel" destination="MLL-re-eph" id="fUF-TW-WMk"/>
+                        <outlet property="idLabel" destination="JMl-h3-yr5" id="Xl4-wZ-agq"/>
+                        <outlet property="imageView" destination="dZo-Xs-tqz" id="bJB-YY-plX"/>
+                        <outlet property="pokemonNameLabel" destination="1p6-eG-Ar7" id="iYE-Qa-X0m"/>
+                        <outlet property="typeLabel" destination="qmB-WZ-haA" id="1Vh-uu-u3X"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pPG-ez-u6p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
