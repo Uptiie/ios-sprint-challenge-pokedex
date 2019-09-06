@@ -7,23 +7,33 @@
 //
 
 import Foundation
-import UIKit
-
-enum HTTPMethod: String {
-    case get = "GET"
-    case post = "POST"
-}
-
-enum NetworkError: Error {
-    case noAuth
-    case badAuth
-    case otherError
-    case badData
-    case noDecode
-}
 
 class APIController {
     
-    baseUrl = URL(string: "https://pokeapi.co/api/v2/evolution-chain/1/")!
-
+    var pokemon: [Pokemon] = []
+    
+    let baseURL = URL(string: "https://pokeapi.co/api/v2/evolution-chain/1/")!
+    typealias CompletionHandler = (Error?) -> Void
+    
+    func getPokemon(completion: @escaping CompletionHandler = { _ in }) {
+        URLSession.shared.dataTask(with: baseURL) { (data, _, error) in
+            if let error = error {
+                NSLog("Error retrieving Pokemon: \(error)")
+            }
+            guard let data = data else {
+                NSLog("No data from data task.")
+                completion(nil)
+                return
+            }
+            do {
+                let newPokemon = try JSONDecoder().decode(PokemonResult.self, from: data)
+                print(newPokemon)
+                self.pokemon = newPokemon.results
+            } catch {
+                NSLog("Error decoding Pokemon: \(error)")
+                completion(error)
+            }
+            completion(nil)
+        }.resume()
+    }
 }

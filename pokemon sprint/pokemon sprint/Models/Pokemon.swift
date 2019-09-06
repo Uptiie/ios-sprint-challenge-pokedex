@@ -8,9 +8,14 @@
 
 import Foundation
 
-class Pokemon: Codable {
+struct PokemonResult: Decodable {
+    let results: [Pokemon]
+}
+
+struct Pokemon: Decodable {
     let name: String
-    let ability: String
+    let abilities: String
     let type: String
-    let id: String
+    let id: Int
+    
 }
