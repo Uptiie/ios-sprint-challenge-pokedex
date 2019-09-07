@@ -3,7 +3,7 @@
 //  Pokedex
 //
 //  Created by Mitchell Budge on 9/7/19.
-//  Copyright © 2019 Mitchell Budge. All rights reserved.
+//  Copyright © 2019 Donovan Langager. All rights reserved.
 //
 
 import UIKit

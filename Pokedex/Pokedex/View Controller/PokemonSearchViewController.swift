@@ -3,7 +3,7 @@
 //  Pokedex
 //
 //  Created by Mitchell Budge on 9/7/19.
-//  Copyright © 2019 Mitchell Budge. All rights reserved.
+//  Copyright © 2019 Donovan Langager. All rights reserved.
 //
 
 import UIKit
@@ -14,6 +14,9 @@ class PokemonSearchViewController: UIViewController, UISearchBarDelegate {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var saveButton: UIBarButtonItem!
     @IBOutlet weak var nameLabek: UILabel!
+    @IBOutlet weak var pokemonID: UILabel!
+    @IBOutlet weak var pokemonType: UILabel!
+    @IBOutlet weak var pokemonAbilities: UILabel!
     
     var pokemonController: PokemonController?
     var pokemon: Pokemon? {
@@ -52,6 +55,9 @@ class PokemonSearchViewController: UIViewController, UISearchBarDelegate {
         imageView.image = UIImage(data: pokemonImageData)
         nameLabek.isHidden = false
         nameLabek.text = pokemon.name.capitalized
+        pokemonID.text = "\(pokemon.id)"
+        pokemonType.text = "\(pokemon.abilities)"
+        pokemonType.text = "\(pokemon.types)"
     }
     
     @IBAction func saveButtonPressed(_ sender: Any) {
