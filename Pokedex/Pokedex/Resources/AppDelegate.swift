@@ -1,9 +1,9 @@
 //
 //  AppDelegate.swift
-//  pokemon sprint
+//  Pokedex
 //
-//  Created by Uptiie on 6/21/19.
-//  Copyright © 2019 Walcenberg, Inc. All rights reserved.
+//  Created by Mitchell Budge on 9/7/19.
+//  Copyright © 2019 Mitchell Budge. All rights reserved.
 //
 
 import UIKit

@@ -1,35 +1,37 @@
 //
-//  APIController.swift
-//  pokemon sprint
+//  PokemonController.swift
+//  Pokedex
 //
-//  Created by Uptiie on 6/21/19.
-//  Copyright © 2019 Walcenberg, Inc. All rights reserved.
+//  Created by Mitchell Budge on 9/7/19.
+//  Copyright © 2019 Mitchell Budge. All rights reserved.
 //
 
 import Foundation
 
 class PokemonController {
     
+    var pokemonTeam: [Pokemon] = []
+    
     let baseURL = URL(string: "https://pokeapi.co/api/v2/pokemon/")!
     
     func getPokemon(searchTerm: String, completion: @escaping (Result<Pokemon, Error>) -> Void) {
         let requestURL = baseURL.appendingPathComponent(searchTerm.lowercased())
         
-        URLSession.shared.dataTask(with: requestURL) { (data, _, error) in
+        URLSession.shared.dataTask(with: requestURL) { (jsonData, _, error) in
             if let error = error {
-                print("Error getting Pokemon: \(error)")
+                print("Error getting pokemon: \(error)")
                 completion(.failure(error))
                 return
             }
             guard let pokemonData = jsonData else {
-                print("Error retreiving data from data task")
+                print("Error retrieving data from data task")
                 completion(.failure(NSError()))
                 return
             }
             do {
                 let decoder = JSONDecoder()
                 decoder.keyDecodingStrategy = .convertFromSnakeCase
-                let pokemon = try JSONDecoder().decode(Pokemon.self, from: pokemonData)
+                let pokemon = try decoder.decode(Pokemon.self, from: pokemonData)
                 print(pokemon)
                 completion(.success(pokemon))
             } catch {
@@ -38,4 +40,9 @@ class PokemonController {
             }
         }.resume()
     }
+    
+    func addPokemon(pokemon: Pokemon) {
+        pokemonTeam.append(pokemon)
+    }
+    
 }
