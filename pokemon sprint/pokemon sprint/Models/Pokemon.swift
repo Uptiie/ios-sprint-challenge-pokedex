@@ -15,21 +15,18 @@ struct PokemonResult: Decodable {
 struct Pokemon: Decodable {
     let name: String
     let id: Int
-    
+    let sprites: Sprite
     let abilities: [Ability]
     
-    struct Ability {
+    struct Ability: Decodable {
         let subAbility: SubAbility
         
         struct SubAbility {
             let name: String
         }
     }
-    
-    let sprites: Sprite {
-        struct Sprite {
-            front_default: String
-        }
+    struct Sprite: Decodable {
+        let frontDefault: URL
     }
     
     let types: String

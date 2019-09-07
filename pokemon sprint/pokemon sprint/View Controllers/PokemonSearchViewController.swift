@@ -41,6 +41,10 @@ class PokemonSearchViewController: UIViewController, UISearchBarDelegate {
     }
     func updateViews() {
         guard isViewLoaded else { return }
+        guard let pokemonImageData = try? Data(contentsOf: pokemon?.sprites.frontDefault) else { return }
+        imageView.image = UIImage(data: pokemonImageData)
+        
+        }
         
     }
     @IBAction func saveButton(_ sender: Any) {
