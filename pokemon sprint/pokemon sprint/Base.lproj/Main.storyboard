@@ -48,7 +48,7 @@
                     <navigationItem key="navigationItem" id="yjW-Kc-0ns">
                         <barButtonItem key="rightBarButtonItem" systemItem="search" id="35m-O0-L37">
                             <connections>
-                                <segue destination="Za0-JF-giy" kind="show" id="eyM-F9-jtq"/>
+                                <segue destination="Za0-JF-giy" kind="show" identifier="AddPokemon" id="eyM-F9-jtq"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -57,10 +57,10 @@
             </objects>
             <point key="canvasLocation" x="1090" y="400"/>
         </scene>
-        <!--Search View Controller-->
+        <!--Pokemon Search View Controller-->
         <scene sceneID="dA2-73-zkH">
             <objects>
-                <viewController id="Za0-JF-giy" customClass="SearchViewController" customModule="pokemon_sprint" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Za0-JF-giy" customClass="PokemonSearchViewController" customModule="pokemon_sprint" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="20A-Jc-nbO">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

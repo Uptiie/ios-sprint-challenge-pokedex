@@ -18,7 +18,7 @@ class PokemonTableViewController: UITableViewController {
         }
     }
     
-    let apiController = APIController()
+    let apiController = PokemonController()
     
     // MARK: - View Lifecycle
     
