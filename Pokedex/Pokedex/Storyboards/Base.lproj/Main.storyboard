@@ -57,10 +57,10 @@
             </objects>
             <point key="canvasLocation" x="773.91304347826087" y="123.88392857142857"/>
         </scene>
-        <!--View Controller-->
+        <!--Pokemon Detail View Controller-->
         <scene sceneID="5mU-Yc-Ow1">
             <objects>
-                <viewController id="g0D-wT-ERb" sceneMemberID="viewController">
+                <viewController id="g0D-wT-ERb" customClass="PokemonDetailViewController" customModule="Pokedex" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cgw-V5-ou6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -155,6 +155,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="sD4-4J-NpZ"/>
                     </view>
+                    <connections>
+                        <outlet property="IDLabel" destination="HsP-Xs-m4g" id="Vxp-3T-4fN"/>
+                        <outlet property="abilitiesLabel" destination="Be1-si-Cpj" id="vtS-as-3mN"/>
+                        <outlet property="imageView" destination="t3q-Cu-Fl0" id="c0f-ED-T4h"/>
+                        <outlet property="nameLabel" destination="ZA2-AL-AWI" id="9Yw-dN-Zg9"/>
+                        <outlet property="typeLabel" destination="Q0v-pt-Ek8" id="kMI-zk-Q8g"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4dX-pI-KQo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
