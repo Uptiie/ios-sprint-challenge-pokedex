@@ -182,6 +182,7 @@
                         <outlet property="imageView" destination="bQq-Am-2Ek" id="aUu-qc-ZY1"/>
                         <outlet property="pokemonNameLabel" destination="1XE-I3-bk8" id="Hfg-h0-U4p"/>
                         <outlet property="pokemonSearch" destination="SwC-3a-MlQ" id="mOC-3Y-9UE"/>
+                        <outlet property="searchBar" destination="SwC-3a-MlQ" id="w3n-Uo-Kg3"/>
                         <outlet property="typeLabel" destination="MSl-8C-Jvg" id="72w-xw-Fhu"/>
                     </connections>
                 </viewController>

@@ -8,19 +8,41 @@
 
 import UIKit
 
-class PokemonSearchViewController: UIViewController {
+class PokemonSearchViewController: UIViewController, UISearchBarDelegate {
+    
     @IBOutlet weak var idLabel: UILabel!
     @IBOutlet weak var abilitiesLabel: UILabel!
     @IBOutlet weak var typeLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var pokemonNameLabel: UILabel!
+    @IBOutlet weak var searchBar: UISearchBar!
+    
+    let pokemonController = PokemonController()
+    var pokemon: Pokemon? {
+        didSet{
+            updateViews()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        searchBar.delegate = self
 
         // Do any additional setup after loading the view.
     }
-    @IBOutlet weak var pokemonSearch: UISearchBar!
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let searchTerm = searchBar.text else { return }
+        pokemonController.getPokemon(searchTerm: searchTerm) (pokemon) in
+        guard let pokemon = try pokemon.get() else { return }
+        DispatchQueue.main.async {
+            self.pokemon = searchedPokemon
+        }
+    }
+    func updateViews() {
+        guard isViewLoaded else { return }
+        
+    }
     @IBAction func saveButton(_ sender: Any) {
     }
 
