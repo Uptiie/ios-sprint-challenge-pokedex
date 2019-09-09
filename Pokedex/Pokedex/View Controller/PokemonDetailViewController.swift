@@ -15,6 +15,8 @@ class PokemonDetailViewController: UIViewController {
     @IBOutlet weak var typeLabel: UILabel!
     @IBOutlet weak var abilitiesLabel: UILabel!
     
+    var pokemonController: PokemonController?
+    
     var pokemon: Pokemon? {
         didSet {
             updateViews()
@@ -26,16 +28,20 @@ class PokemonDetailViewController: UIViewController {
         updateViews()
 
         // Do any additional setup after loading the view.
+        
     }
     
     func updateViews() {
-        guard isViewLoaded,
-            let pokemon = pokemon else { return }
-        nameLabel.text = pokemon.name
+        guard isViewLoaded else { return }
+        guard let pokemon = pokemon else { return }
+        title = pokemon.name.capitalized + " " + "ID: \(pokemon.id)"
+        guard let pokemonImageData = try? Data(contentsOf: pokemon.sprites.frontDefault) else { return }
+        imageView.image = UIImage(data: pokemonImageData)
+        nameLabel.isHidden = false
+        nameLabel.text = pokemon.name.capitalized
         IDLabel.text = "\(pokemon.id)"
-        typeLabel.text = "\(pokemon.types)"
         abilitiesLabel.text = "\(pokemon.abilities)"
-        imageView.image = UIImage(data: pokemon.sprites.frontDefault)
+        typeLabel.text = "\(pokemon.types)"
     }
 
 }

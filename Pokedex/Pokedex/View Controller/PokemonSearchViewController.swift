@@ -42,7 +42,8 @@ class PokemonSearchViewController: UIViewController, UISearchBarDelegate {
     }
     
     func hideViews() {
-        saveButton.isEnabled = false
+        
+        guard pokemon != nil else { return }
         nameLabek.isHidden = true
     }
     
@@ -56,8 +57,13 @@ class PokemonSearchViewController: UIViewController, UISearchBarDelegate {
         nameLabek.isHidden = false
         nameLabek.text = pokemon.name.capitalized
         pokemonID.text = "\(pokemon.id)"
-        pokemonType.text = "\(pokemon.abilities)"
-        pokemonType.text = "\(pokemon.types)"
+        
+        let abilityString = pokemon.abilities.map({ $0.ability.name }).joined(separator: ", ")
+        
+        pokemonAbilities.text = abilityString
+        
+        let typeString = pokemon.types.map({ $0.type.name }).joined(separator: ", ")
+        pokemonType.text = typeString
     }
     
     @IBAction func saveButtonPressed(_ sender: Any) {

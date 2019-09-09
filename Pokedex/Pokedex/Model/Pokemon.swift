@@ -12,18 +12,23 @@ struct Pokemon: Decodable {
     let name: String
     let id: Int
     let sprites: Sprite
-    let abilities: Ability
+    let abilities: [Ability]
     let types: [Type]
 }
-
 struct Sprite: Decodable {
     let frontDefault: URL
 }
-
 struct Ability: Decodable {
-    let name: String
+    let ability: SubAbility
+    
+    struct SubAbility: Decodable {
+        let name: String
+    }
 }
-
 struct Type: Decodable {
-    let name: String
+    let type: SubType
+    
+    struct SubType: Decodable{
+        let name: String
+    }
 }
