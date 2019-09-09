@@ -13,7 +13,7 @@ struct Pokemon: Decodable {
     let id: Int
     let sprites: Sprite
     let abilities: Ability
-    let types: Type
+    let types: [Type]
 }
 
 struct Sprite: Decodable {
