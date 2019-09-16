@@ -80,10 +80,11 @@ class PokemonTeamTableViewController: UITableViewController {
             searchVC.pokemonController = pokemonController
             
         } else if segue.identifier == "PokemonDetailSegue" {
-            guard let detailVC = segue.destination as? PokemonDetailViewController,
+            guard let detailVC = segue.destination as? PokemonSearchViewController,
             let indexpath = tableView.indexPathForSelectedRow else { return }
             let pokemon = pokemonController.pokemonTeam[indexpath.row]
             detailVC.pokemonController = pokemonController
+            detailVC.pokemon = pokemon
         }
     }
     

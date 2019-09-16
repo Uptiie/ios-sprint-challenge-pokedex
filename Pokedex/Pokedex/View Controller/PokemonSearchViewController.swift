@@ -29,6 +29,7 @@ class PokemonSearchViewController: UIViewController, UISearchBarDelegate {
         super.viewDidLoad()
         searchBar.delegate = self
         hideViews()
+        updateViews()
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
@@ -54,7 +55,6 @@ class PokemonSearchViewController: UIViewController, UISearchBarDelegate {
         title = pokemon.name.capitalized + " " + "ID: \(pokemon.id)"
         guard let pokemonImageData = try? Data(contentsOf: pokemon.sprites.frontDefault) else { return }
         imageView.image = UIImage(data: pokemonImageData)
-        nameLabek.isHidden = false
         nameLabek.text = pokemon.name.capitalized
         pokemonID.text = "\(pokemon.id)"
         
